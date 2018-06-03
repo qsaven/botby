@@ -13,6 +13,9 @@ client = discord.Client()
 dothething = {}
 
 
+@client.event
+async def on_ready():
+	return await client.change_presence(game=discord.Game(name='')) 
 
 @client.event
 async def on_message(message):
