@@ -12,7 +12,9 @@ import os
 client = discord.Client()
 dothething = {}
 
-
+@client.event
+async def on_ready():
+	return await client.change_presence(game=discord.Game(name='!    mar = start')) 
 
 @client.event
 async def on_message(message):
@@ -28,7 +30,7 @@ async def on_message(message):
         if message.content.startswith("+start"):
                 await client.send_message(message.channel, "` started`:rainbow:")
                 hue=0
-                if message.content.strip().startswith("+start"):
+                if message.content.strip().startswith("+start "):
                         role = discord.utils.find(lambda m: m.name == message.content[6:].strip() ,message.server.roles)
                 else:
                         role = discord.utils.find(lambda m: m.name == default_role ,message.server.roles)
