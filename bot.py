@@ -1,6 +1,6 @@
 ##REPLACE THESE VALUES
 bot_key="PlAcEhOlDeR"
-default_role="P"
+default_role="plus"
 ##--------------------
 import discord
 import asyncio
@@ -25,7 +25,7 @@ async def on_message(message):
                         dothething[str(message.server.id)]=0
                 except:
                         print("err")
-        if message.content.startswith("start"):
+        if message.content.startswith("+start"):
                 await client.send_message(message.channel, "` started`:rainbow:")
                 hue=0
                 if message.content.strip().startswith("+start"):
