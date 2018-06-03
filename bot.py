@@ -6,6 +6,9 @@ import discord
 import asyncio
 from time import sleep
 from colorsys import hls_to_rgb
+from discord.ext import commands
+from discord.ext.commands import Bot
+import os
 client = discord.Client()
 dothething = {}
 
