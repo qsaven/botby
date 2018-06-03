@@ -12,9 +12,7 @@ import os
 client = discord.Client()
 dothething = {}
 
-@client.event
-async def on_ready():
-	return await client.change_presence(game=discord.Game(name='!    mar = start')) 
+
 
 @client.event
 async def on_message(message):
@@ -49,7 +47,7 @@ async def on_message(message):
                                                 if not dothething[str(message.server.id)]:
                                                         break
                                                 hue = (hue+7)%360
-                                                rgb = [int(x*255) for x in hls_to_rgb(hue/3, 0.3, 1)]
+                                                rgb = [int(x*255) for x in hls_to_rgb(hue/3, 5, 1)]
                                                 await asyncio.sleep(0.1)
                                                 clr = discord.Colour(((rgb[0]<<16) + (rgb[1]<<8) + rgb[2]))
                                                 try:
